@@ -89,3 +89,16 @@
     margin-left: 100px; 
     text-align: center;
 }
+
+.win
+{
+    color: green;
+    text-align: center;
+}
+
+.not-win
+{
+    color: red;
+    text-align: center;
+    margin-left: 60px;
+}

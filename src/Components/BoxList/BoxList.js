@@ -1,13 +1,31 @@
 import React, {Component} from 'react';
 import './BoxList.css';
+import Confetti from "react-confetti";
 
 export default class BoxList extends Component{
+
+    lst = [null,null,null,null];
+    isWin = -1
 
     state = {
         numberList : this.props.list,
         placeList : [null,null,null,null]
     }
 
+    winnerCelebration(val){
+        if(val===1)
+            return(
+                <>
+                    <h2 className='win'>You Win</h2>
+                    <Confetti height={1000} width={1500}/>
+                </>
+            )
+        else if(val===0)
+            return(
+                <h2 className='not-win'>Keep Trying</h2>
+            )                
+    }
+    
     onDragStart(ev, id){
         ev.dataTransfer.setData("drag", id);
     }
@@ -21,6 +39,7 @@ export default class BoxList extends Component{
         let place = this.state.placeList
         let drag = ev.dataTransfer.getData("drag");
         place[id] = number[drag]
+        this.lst[drag] = number[drag]
         number[drag]=null
         this.setState({
             numberList : number,
@@ -128,9 +147,25 @@ export default class BoxList extends Component{
                     </div>
                 </div>
             )    
-    
+        
+        if(this.state.numberList.every((li) => li==null) && this.lst.every((li,i) => li===this.state.placeList[i]))
+        {
+            this.isWin = 1
+        }
+        else if(this.state.numberList.every((li) => li==null))
+        {
+            this.isWin = 0
+        }
+
         return(
+
             <div>
+                <p>
+                    {
+                        this.winnerCelebration(this.isWin)
+                    }
+                </p>
+
                 <div className='box'> 
                     {tasks.numberList}
                 </div>
