@@ -1,0 +1,91 @@
+.box
+{
+    display:flex; 
+    flex-wrap:wrap; 
+    justify-content: center; 
+    align-items: center;
+    flex:1
+}
+
+.color-dim
+{
+    border: black solid 1px;
+    background-color: cornflowerblue;
+    height: 5em;
+    width: 5em;
+    margin-left: 20px; 
+    text-align: center;
+}
+
+.color-white
+{
+    background-color: white;
+    height: 5em;
+    width: 5em;
+    margin-left: 20px; 
+    text-align: center;
+}
+
+.arrangement
+{
+    display: flex;
+    flex-direction: row;
+    margin-left: 30px;
+    align-items: center;
+    justify-content: center;
+}
+.margin
+{
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 20em;
+    width: 20em;
+    background-color: aqua;
+    border: black solid 1px;
+    text-align: center;
+}
+.first
+{
+    margin-top: 40px;
+    margin-left: 0px;
+    margin-right: 20px;
+    height: 20em;
+    width: 20em;
+    background-color: aqua;
+    border: black solid 1px;
+    text-align: center;
+    align-items: center;
+}
+.last
+{
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-right: 30px;
+    height: 20em;
+    width: 20em;
+    background-color: aqua;
+    border: black solid 1px;
+    text-align: center;
+}
+
+.inside-div
+{
+    border: black solid 1px;
+    background-color: cornflowerblue;
+    height: 5em;
+    width: 5em;
+    margin-top: 80px;
+    margin-left: 100px; 
+    text-align: center;
+}
+
+.initial-div
+{
+    background-color: white;
+    height: 5em;
+    width: 5em;
+    margin-top: 80px;
+    margin-left: 100px; 
+    text-align: center;
+}
