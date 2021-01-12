@@ -23,7 +23,11 @@ export default class BoxList extends Component{
         else if(val===0)
             return(
                 <h2 className='not-win'>Keep Trying</h2>
-            )                
+            ) 
+        else
+            return(
+                <h3 className='instruction'>Identify Thousand's, Hundred's, Ten's and Unit's place value from the above number given in Words and place them in appropriate boxes below</h3>
+            )               
     }
     
     onDragStart(ev, id){
@@ -160,11 +164,11 @@ export default class BoxList extends Component{
         return(
 
             <div>
-                <p>
+                <>
                     {
                         this.winnerCelebration(this.isWin)
                     }
-                </p>
+                </>
 
                 <div className='box'> 
                     {tasks.numberList}

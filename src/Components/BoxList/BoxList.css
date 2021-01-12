@@ -10,7 +10,7 @@
 .color-dim
 {
     border: black solid 1px;
-    background-color: cornflowerblue;
+    background-color:cornflowerblue;
     height: 5em;
     width: 5em;
     margin-left: 20px; 
@@ -100,5 +100,10 @@
 {
     color: red;
     text-align: center;
-    margin-left: 60px;
+}
+
+.instruction
+{
+    color:darkblue;
+    text-align: center;
 }
