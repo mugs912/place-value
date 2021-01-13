@@ -1,14 +1,14 @@
-import React, {Component} from 'react';
-import './BoxList.css';
-import Confetti from "react-confetti";
+import React, {Component} from 'react'
+import './BoxList.css'
+import Confetti from "react-confetti"
 
 export default class BoxList extends Component{
 
-    lst = [null,null,null,null];
+    lst = this.props.list
     isWin = -1
 
     state = {
-        numberList : this.props.list,
+        numberList : [0,1,2,3,4,5,6,7,8,9],
         placeList : [null,null,null,null]
     }
 
@@ -31,19 +31,18 @@ export default class BoxList extends Component{
     }
     
     onDragStart(ev, id){
-        ev.dataTransfer.setData("drag", id);
+        ev.dataTransfer.setData("drag", id)
     }
 
     onDragOver(ev,) {
-        ev.preventDefault();  
+        ev.preventDefault()  
     }
 
     onDrop(ev,id) {
         let number = this.state.numberList
         let place = this.state.placeList
-        let drag = ev.dataTransfer.getData("drag");
+        let drag = ev.dataTransfer.getData("drag")
         place[id] = number[drag]
-        this.lst[drag] = number[drag]
         number[drag]=null
         this.setState({
             numberList : number,
@@ -152,11 +151,11 @@ export default class BoxList extends Component{
                 </div>
             )    
         
-        if(this.state.numberList.every((li) => li==null) && this.lst.every((li,i) => li===this.state.placeList[i]))
+        if(this.state.numberList.filter((item) => item==null).length === 4 && this.lst.every((li,i) => li===this.state.placeList[i]))
         {
             this.isWin = 1
         }
-        else if(this.state.numberList.every((li) => li==null))
+        else if(this.state.numberList.filter((item) => item==null).length === 4)
         {
             this.isWin = 0
         }
@@ -178,6 +177,6 @@ export default class BoxList extends Component{
                     {tasks.placeList}
                 </div>
             </div>
-        );
+        )
     }
 }

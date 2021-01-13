@@ -1,15 +1,12 @@
-import './App.css';
-import BoxList from './Components/BoxList/BoxList';
+import './App.css'
+import GenerateNumber from "./Components/GenerateNumber/GenerateNumber"
 
-function App() {
+export default function App() {
 
   return (
     <div className="App">
-        <h1>One Thousand Three Hundred Twenty Four</h1>
-        <BoxList list={[1,3,2,4]}/>
+        <GenerateNumber/>
     </div>
   );
 
 }
-
-export default App;
