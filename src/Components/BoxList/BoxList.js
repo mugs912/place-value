@@ -1,17 +1,18 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import './BoxList.css'
 import Confetti from "react-confetti"
 
 export default class BoxList extends Component{
 
     lst = this.props.list
+    counts = this.props.count
     isWin = -1
 
     state = {
         numberList : [0,1,2,3,4,5,6,7,8,9],
         placeList : [null,null,null,null]
     }
-
+    
     winnerCelebration(val){
         if(val===1)
             return(
@@ -34,7 +35,7 @@ export default class BoxList extends Component{
         ev.dataTransfer.setData("drag", id)
     }
 
-    onDragOver(ev,) {
+    onDragOver(ev) {
         ev.preventDefault()  
     }
 
@@ -43,7 +44,10 @@ export default class BoxList extends Component{
         let place = this.state.placeList
         let drag = ev.dataTransfer.getData("drag")
         place[id] = number[drag]
-        number[drag]=null
+        if(this.counts[number[drag]])
+            this.counts[number[drag]] === 1 ? number[drag] = null : this.counts[number[drag]]--
+        else
+            number[drag] = null
         this.setState({
             numberList : number,
             placeList : place
@@ -151,11 +155,11 @@ export default class BoxList extends Component{
                 </div>
             )    
         
-        if(this.state.numberList.filter((item) => item==null).length === 4 && this.lst.every((li,i) => li===this.state.placeList[i]))
+        if(this.state.placeList.filter((item) => item!=null).length === 4 && this.lst.every((li,i) => li===this.state.placeList[i]))
         {
             this.isWin = 1
         }
-        else if(this.state.numberList.filter((item) => item==null).length === 4)
+        else if(this.state.placeList.filter((item) => item!=null).length === 4)
         {
             this.isWin = 0
         }
