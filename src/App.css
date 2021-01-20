@@ -1,4 +1,5 @@
 .App {
+  background-color: #3366FF;
   text-align: center;
   flex-direction: column;
   justify-items:start;
@@ -6,33 +7,4 @@
   min-height:100vh;
   flex-direction: column;
   background-color:yellow;
-}
-
-.btn-div{
-  margin-top: 40px;
-  align-items: center;
-}
-
-.btn {
-  height: 2em;
-  width: 8em;
-  border-radius: 8px;
-  border: darkgray solid 3px;
-  box-shadow: 5px 5px darkgrey;
-  font-weight: bold;
-  font-size: larger;
-  align-self: center;
-  background-color: darkblue;
-  color: white;
-}
-
-.btn:hover{
-  background-color:white;
-  color: darkblue;
-}
-
-.btn:active {
-  background-color: white;
-  box-shadow: 0 5px darkgray;
-  transform: translateY(4px);
 }

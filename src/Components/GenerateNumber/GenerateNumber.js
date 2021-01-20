@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import BoxList from '../BoxList/BoxList'
+import './GenerateNumber.css'
 
 export default class GenerateNumber extends Component{
   
@@ -8,11 +9,12 @@ export default class GenerateNumber extends Component{
     teens = ['Ten','Eleven','Twelve','Thirteen','Fourteen','Fifteen','Sixteen','Seventeen','Eighteen','Nineteen']
 
     convertToWords() {
-        let num = Math.floor(1000+(Math.random()*9000))
+        let numList
         let que = ''
-        let counts = {}
+        let num = Math.floor(1000+(Math.random()*9000))
         let i = 3
-        let numList = Array(4)
+        console.log("different number")
+        numList = Array(4)
         while(num !== 0)
         {
           numList[i] = num%10
@@ -20,7 +22,6 @@ export default class GenerateNumber extends Component{
           i--
         }
         que = numList.map((item,index) => {
-          counts[item] = counts[item] ? counts[item] + 1 : 1;
           if (index === 0)
             return  (que + this.numWords[item] + ' Thousand ')
           else if(index === 1 && item !== 0)
@@ -36,15 +37,19 @@ export default class GenerateNumber extends Component{
             return (que + this.numWords[item])
           else return (que + '');
         })
-        return ({'list':numList,'word':(que[0] + que[1] + que[2] + que[3]),'count':counts})
+        return ({'list':numList,'word':(que[0] + que[1] + que[2] + que[3])})
     }
 
     render(){
         var question = this.convertToWords()
         return(
           <div>
-            <h1>{question.word}</h1>
-            <BoxList list={question.list} count={question.count}/>
+              <h1 className='que rainbow'>
+                <span className='text'>
+                  {question.word}
+                </span>
+              </h1>
+            <BoxList list={question.list}/>
           </div>
         );
     }

@@ -1,0 +1,38 @@
+.btn-div{
+    margin-top: 40px;
+    align-items: center;
+  }
+  
+  .btn {
+    height: 2em;
+    width: 8em;
+    border-radius: 8px;
+    border: darkgray solid 3px;
+    box-shadow: 5px 5px darkgrey;
+    font-weight: bold;
+    font-size: larger;
+    align-self: center;
+    background-color: darkblue;
+    animation-name: btn;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    color: white;
+  }
+  
+  .btn:hover{
+    background-color:white;
+    color: darkblue;
+  }
+  
+  .btn:active {
+    background-color: white;
+    box-shadow: 0 5px darkgray;
+    transform: translateY(4px);
+  }
+
+  @keyframes btn{
+    0% {opacity: 0; transform: translateY(50px);}
+    25% {opacity: 0.3; transform: translateY(20);}
+    50% {opacity: 0.5; transform: translateY(-20px);}
+    100% {opacity: 1; transform: translate(0);}
+  }
