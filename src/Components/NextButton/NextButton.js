@@ -4,8 +4,12 @@ import './NextButton.css'
 export default function NextButton() {
 
     return (
-        <div className='btn-div'>
-            <button className='btn' onClick={() => {window.location.reload(false)} }>Next Question</button>
+        <div class='nextpopup'>
+            <div>
+	        <h1 className='win'>You Win</h1>
+	        <div className='nextsmile'>&#128512;</div>
+	        <button className="nextbtn" onClick={() => {window.location.reload(false)}} >Next Level</button>
+            </div>
         </div>
     );
 }

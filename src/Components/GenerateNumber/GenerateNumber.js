@@ -44,11 +44,9 @@ export default class GenerateNumber extends Component{
         var question = this.convertToWords()
         return(
           <div>
-              <h1 className='que rainbow'>
-                <span className='text'>
-                  {question.word}
-                </span>
-              </h1>
+            <h1 className='que'>
+                {question.word}
+            </h1>
             <BoxList list={question.list}/>
           </div>
         );

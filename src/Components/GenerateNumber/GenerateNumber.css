@@ -4,19 +4,8 @@
     animation-name: que;
     animation-duration: 2s;
     animation-direction: alternate;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     color: rgb(243, 242, 174);
-}
-  
-.que.rainbow .text 
-{
-    background: red; 
-    background: -webkit-linear-gradient(left, #b306a9, #ef2667, #f42e2c,  #f42e2c, #2a7e07, #2a7e07, #0b13fd, #a804af);
-    background: -o-linear-gradient(left, #b306a9, #ef2667, #f42e2c,  #f42e2c, #2a7e07, #2a7e07, #0b13fd, #a804af);
-    background: -moz-linear-gradient(left, #b306a9, #ef2667, #f42e2c,  #f42e2c,#2a7e07, #2a7e07, #0b13fd, #a804af);
-    background: linear-gradient(to right, #b306a9, #ef2667, #f42e2c,  #f42e2c,#2a7e07, #2a7e07, #0b13fd, #a804af); 
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 @keyframes que
