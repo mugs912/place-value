@@ -2,21 +2,15 @@ import React from "react";
 import './TryButton.css'
 import losegif from './lose.gif'
 
-export default function TryButton() {
-
-    function displayblock() {
-        document.getElementById('try').style.display = "block"
-    }
+export default function TryButton(props) {
 
     function displaynone() {
         document.getElementById('try').style.display = "none";
+        props.que.style.display = 'block'
     }
 
     return (
-        <div class='trypopup' id='try'>
-            {
-                displayblock
-            }
+        <div className='trypopup' id='try'>
             <div>
 	            <img className='trysmile' src={losegif} alt='you lose'/>
 	            <button className="trybtn" onClick={displaynone} >Try Again</button>

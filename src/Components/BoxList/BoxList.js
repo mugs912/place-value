@@ -18,6 +18,7 @@ export default class BoxList extends Component{
 
     lst = this.props.list
     isWin = -1
+    count = 0
     imgList = [logo0,logo1,logo2,logo3,logo4,logo5,logo6,logo7,logo8,logo9]
 
     state = {
@@ -27,25 +28,35 @@ export default class BoxList extends Component{
 
     winnerCelebration(val){
         if(val===1)
+        {
+            document.getElementById('question').style.display = 'none'
             return(
                 <>
-                    <Confetti height={1000} width={1500}/>
+                    <Confetti height={500} width={1200}/>
                     <NextButton/>
                 </>
             )
+        }
         else if(val===0)
         {
+            document.getElementById('question').style.display = 'none'
             return(
                 <>
                     <h2 className='not-win'>Keep Trying</h2>
-                    <TryButton/>
+                    <TryButton que={document.getElementById('question')}/>
                 </>
             ) 
         }
-        else
+        if(this.count === 0)
+        {
             return(
                 <h2 className='instruction'>Identify Thousand's, Hundred's, Ten's and Unit's place value<br></br> From the above number given in Words and place them in appropriate boxes below</h2>
-            )               
+            ) 
+        } 
+        if(this.count > 0)
+            return(
+                <h2 className='not-win'>Keep Trying</h2>
+            )          
     }
     
     onDragStart(ev, id){
@@ -161,26 +172,28 @@ export default class BoxList extends Component{
         {
             this.isWin = 1
         }
-        else if(this.state.placeList.filter((item) => item!=null).length === 4)
+        else if(this.state.placeList.filter((item) => item!=null).length === 4 && this.count === 0 )
         {
             this.isWin = 0
+            this.count++
         }
+        else
+            this.isWin = -1
 
         return(
-
             <div>
-                <>
-                    {
-                        this.winnerCelebration(this.isWin)
-                    }
-                </>
+                {
+                    this.winnerCelebration(this.isWin)
+                }
 
-                <div className='box'> 
-                    {tasks.imgList}
-                </div>
+                <div id='question'>
+                    <div className='box'> 
+                        {tasks.imgList}
+                    </div>
 
-                <div className='arrangement'>
-                    {tasks.placeList}
+                    <div className='arrangement'>
+                        {tasks.placeList}
+                    </div>
                 </div>
             </div>
         )

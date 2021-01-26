@@ -1,11 +1,10 @@
 .trypopup
 {
   background-color: rgb(246, 210, 210);
-  height: 20em;
+  height: 19em;
   width: 18em;
   margin: auto;
-  margin-top: 10px;
-  margin-bottom: 220px;
+  margin-top: 30px;
   border-radius: 40px;
   text-align: center;
   animation-name: trypopup;
@@ -51,6 +50,6 @@
 .trysmile
 {
   padding-top: 0px;
-  height: 15em;
-  width: 15em;
+  height: 14em;
+  width: 14em;
 }

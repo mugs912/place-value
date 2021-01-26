@@ -5,7 +5,7 @@ import wingif from './win.gif'
 export default function NextButton() {
 
     return (
-        <div class='nextpopup'>
+        <div className='nextpopup'>
 	        <h1 className='win'>You Win</h1>
             <div>
 	            <img className='nextsmile' src={wingif} alt='you win' />
