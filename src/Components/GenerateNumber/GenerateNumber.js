@@ -13,7 +13,6 @@ export default class GenerateNumber extends Component{
         let que = ''
         let num = Math.floor(1000+(Math.random()*9000))
         let i = 3
-        console.log("different number")
         numList = Array(4)
         while(num !== 0)
         {

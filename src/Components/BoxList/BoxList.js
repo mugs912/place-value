@@ -1,5 +1,15 @@
 import React, { Component } from 'react'
 import './BoxList.css'
+import logo0 from './0.jpg'
+import logo1 from './1.jpg'
+import logo2 from './2.jpg'
+import logo3 from './3.jpg'
+import logo4 from './4.jpg'
+import logo5 from './5.jpg'
+import logo6 from './6.jpg'
+import logo7 from './7.jpg'
+import logo8 from './8.jpg'
+import logo9 from './9.jpg'
 import Confetti from "react-confetti"
 import NextButton from "../NextButton/NextButton";
 import TryButton from "../TryButton/TryButton";
@@ -8,6 +18,7 @@ export default class BoxList extends Component{
 
     lst = this.props.list
     isWin = -1
+    imgList = [logo0,logo1,logo2,logo3,logo4,logo5,logo6,logo7,logo8,logo9]
 
     state = {
         numberList : [0,1,2,3,4,5,6,7,8,9],
@@ -56,15 +67,15 @@ export default class BoxList extends Component{
 
     render(){
         var tasks = {
-            numberList: [],
+            imgList : [],
             placeList: []
         };
 
-        this.state.numberList.map((el,i) => {
+        this.imgList.map((el,i) => {
             return(
-                tasks.numberList.push(
+                tasks.imgList.push(
                     <div className='color-dim' key={i} onDragStart = {(e) => this.onDragStart(e,i)} draggable>
-                        <h1>{this.state.numberList[i]}</h1>
+                        <img src={this.imgList[i]} alt='number'/>
                     </div>
                 )
             );
@@ -73,16 +84,16 @@ export default class BoxList extends Component{
         if(this.state.placeList[0] != null)
             tasks.placeList.push(
                 <div key={0} className='first'>
-                    <h1 className='place'>Thousand's Place</h1>
+                    <h2 className='place'>1000's Place</h2>
                     <div className='inside-div' onDragOver={(e) => this.onDragOver(e)} onDrop={(e)=> this.onDrop(e,0)}>
-                        <h1>{this.state.placeList[0]}</h1>
+                        <img src={this.imgList[this.state.placeList[0]]} alt='number'/>
                     </div>
                 </div>
             )
         else
             tasks.placeList.push(
                 <div key={0} className='first'>
-                    <h1 className='place'>Thousand's Place</h1>
+                    <h2 className='place'>1000's Place</h2>
                     <div className='initial-div' onDragOver={(e) => this.onDragOver(e)} onDrop={(e)=> this.onDrop(e,0)}>
                         <h1>{this.state.placeList[0]}</h1>
                     </div>
@@ -92,16 +103,16 @@ export default class BoxList extends Component{
         if(this.state.placeList[1] != null)
             tasks.placeList.push(
                 <div key={1} className='margin'>
-                    <h1 className='place'>Hundred's Place</h1>
+                    <h2 className='place'>100's Place</h2>
                     <div className='inside-div' onDragOver={(e)=>this.onDragOver(e)} onDrop={(e)=> this.onDrop(e,1)}>
-                        <h1>{this.state.placeList[1]}</h1>
+                        <img src={this.imgList[this.state.placeList[1]]} alt='number'/>
                     </div>
                 </div>
             )
         else
             tasks.placeList.push(
                 <div key={1} className='margin'>
-                    <h1 className='place'>Hundred's Place</h1>
+                    <h2 className='place'>100's Place</h2>
                     <div className='initial-div' onDragOver={(e)=>this.onDragOver(e)} onDrop={(e)=> this.onDrop(e,1)}>
                         <h1>{this.state.placeList[1]}</h1>
                     </div>
@@ -111,16 +122,16 @@ export default class BoxList extends Component{
         if(this.state.placeList[2] != null)
             tasks.placeList.push(
                 <div key={2} className='margin'>
-                    <h1 className='place'>Ten's Place</h1>
+                    <h2 className='place'>10's Place</h2>
                     <div className='inside-div' onDragOver={(e)=>this.onDragOver(e)} onDrop={(e)=> this.onDrop(e,2)}>
-                        <h1>{this.state.placeList[2]}</h1>
+                        <img src={this.imgList[this.state.placeList[2]]} alt='number'/>
                     </div>
                 </div>
             )
         else
             tasks.placeList.push(
                 <div key={2} className='margin'>
-                    <h1 className='place'>Ten's Place</h1>
+                    <h2 className='place'>10's Place</h2>
                     <div className='initial-div' onDragOver={(e)=>this.onDragOver(e)} onDrop={(e)=> this.onDrop(e,2)}>
                         <h1>{this.state.placeList[2]}</h1>
                     </div>
@@ -130,16 +141,16 @@ export default class BoxList extends Component{
         if(this.state.placeList[3] != null)
             tasks.placeList.push(
                 <div key={3} className='last'>
-                    <h1 className='place'>Unit's Place</h1>
+                    <h2 className='place'>1's Place</h2>
                     <div className='inside-div' onDragOver={(e)=>this.onDragOver(e)} onDrop={(e)=> this.onDrop(e,3)}>
-                        <h1>{this.state.placeList[3]}</h1>
+                        <img src={this.imgList[this.state.placeList[3]]} alt='number'/>
                     </div>
                 </div>
             )
         else
             tasks.placeList.push(
                 <div key={3} className='last'>
-                    <h1 className='place'>Unit's Place</h1>
+                    <h2 className='place'>1's Place</h2>
                     <div className='initial-div' onDragOver={(e)=>this.onDragOver(e)} onDrop={(e)=> this.onDrop(e,3)}>
                         <h1>{this.state.placeList[3]}</h1>
                     </div>
@@ -165,7 +176,7 @@ export default class BoxList extends Component{
                 </>
 
                 <div className='box'> 
-                    {tasks.numberList}
+                    {tasks.imgList}
                 </div>
 
                 <div className='arrangement'>

@@ -1,11 +1,11 @@
 .que
 {
-    margin-top: 30px;
+    margin-top: 20px;
     animation-name: que;
     animation-duration: 2s;
     animation-direction: alternate;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    color: rgb(243, 242, 174);
+    color:rgb(250, 75, 157);
 }
 
 @keyframes que

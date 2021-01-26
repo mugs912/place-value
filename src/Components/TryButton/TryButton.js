@@ -1,5 +1,6 @@
 import React from "react";
 import './TryButton.css'
+import losegif from './lose.gif'
 
 export default function TryButton() {
 
@@ -17,7 +18,7 @@ export default function TryButton() {
                 displayblock
             }
             <div>
-	            <div className='trysmile'>&#128528;</div>
+	            <img className='trysmile' src={losegif} alt='you lose'/>
 	            <button className="trybtn" onClick={displaynone} >Try Again</button>
             </div>
         </div>

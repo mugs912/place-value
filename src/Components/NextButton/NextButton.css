@@ -1,11 +1,11 @@
 .nextpopup
 {
-  background-color: rgb(246, 210, 210);
-  height: 20em;
+  background-color: rgb(159, 238, 159);
+  height: 22em;
   width: 18em;
   margin: auto;
-  margin-top: 100px;
-  margin-bottom: 130px;
+  margin-top: 40px;
+  margin-bottom: 220px;
   border-radius: 40px;
   text-align: center;
   animation-name: nextpopup;
@@ -23,6 +23,7 @@
 .win
 {
   padding-top: 20px;
+  padding-bottom: 0px;
   color: green;
   animation-name: win;
   animation-duration: 1s;
@@ -38,17 +39,17 @@
 
 .nextbtn
 {
-  margin-top: 30px;
+  margin-top: 10px;
   height: 2em;
   width: 6em;
   border-radius: 8px;
-  border: darkgray solid 3px;
-  box-shadow: 5px 5px darkgrey;
+  border: black solid 1px;
   font-weight: bold;
   font-size: larger;
   align-self: center;
   background-color: green;
   color: white;
+  box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.4)
 }
 
 .nextbtn:hover
@@ -66,5 +67,7 @@
 
 .nextsmile
 {
-  font-size:100px;
+  padding-top: 0px;
+  height: 12em;
+  width: 18em;
 }
