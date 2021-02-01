@@ -42,21 +42,10 @@ export default class BoxList extends Component{
             document.getElementById('question').style.display = 'none'
             return(
                 <>
-                    <h2 className='not-win'>Keep Trying</h2>
                     <TryButton que={document.getElementById('question')}/>
                 </>
             ) 
-        }
-        if(this.count === 0)
-        {
-            return(
-                <h2 className='instruction'>Identify Thousand's, Hundred's, Ten's and Unit's place value<br></br> From the above number given in Words and place them in appropriate boxes below</h2>
-            ) 
-        } 
-        if(this.count > 0)
-            return(
-                <h2 className='not-win'>Keep Trying</h2>
-            )          
+        }         
     }
     
     onDragStart(ev, id){
@@ -79,7 +68,8 @@ export default class BoxList extends Component{
     render(){
         var tasks = {
             imgList : [],
-            placeList: []
+            placeList: [],
+            tickList: []
         };
 
         this.imgList.map((el,i) => {
@@ -93,80 +83,180 @@ export default class BoxList extends Component{
         }) 
 
         if(this.state.placeList[0] != null)
+        {
             tasks.placeList.push(
                 <div key={0} className='first'>
-                    <h2 className='place'>1000's Place</h2>
+                    <div className='placediv'>
+                        <h3 className='place'>1000's Place</h3>
+                    </div>
                     <div className='inside-div' onDragOver={(e) => this.onDragOver(e)} onDrop={(e)=> this.onDrop(e,0)}>
                         <img src={this.imgList[this.state.placeList[0]]} alt='number'/>
                     </div>
                 </div>
             )
+
+            if(this.state.placeList[0] === this.lst[0])
+                tasks.tickList.push(
+                    <div key={0} className='tick'>
+                        <div className='sign'>&#x2714;</div>
+                    </div>
+                )
+            else
+                tasks.tickList.push(
+                    <div key={0} className='cross'>
+                        <div className='sign'>&#x2716;</div>
+                    </div>
+                )
+        }
         else
+        {
             tasks.placeList.push(
                 <div key={0} className='first'>
-                    <h2 className='place'>1000's Place</h2>
+                    <div className='placediv'>
+                        <h3 className='place'>1000's Place</h3>
+                    </div>
                     <div className='initial-div' onDragOver={(e) => this.onDragOver(e)} onDrop={(e)=> this.onDrop(e,0)}>
                         <h1>{this.state.placeList[0]}</h1>
                     </div>
                 </div>
             )
+
+            tasks.tickList.push(
+                <div key={0} className='initial-sign'></div>
+            )
+        }
         
         if(this.state.placeList[1] != null)
+        {
             tasks.placeList.push(
                 <div key={1} className='margin'>
-                    <h2 className='place'>100's Place</h2>
+                    <div className='placediv'>
+                        <h3 className='place'>100's Place</h3>
+                    </div>
                     <div className='inside-div' onDragOver={(e)=>this.onDragOver(e)} onDrop={(e)=> this.onDrop(e,1)}>
                         <img src={this.imgList[this.state.placeList[1]]} alt='number'/>
                     </div>
                 </div>
             )
+
+            if(this.state.placeList[1] === this.lst[1])
+                tasks.tickList.push(
+                    <div key={1} className='tick'>
+                        <div className='sign'>&#x2714;</div>
+                    </div>
+                )
+            else
+                tasks.tickList.push(
+                    <div key={1} className='cross'>
+                        <div className='sign'>&#x2716;</div>
+                    </div>
+                )
+        }
         else
+        {
             tasks.placeList.push(
                 <div key={1} className='margin'>
-                    <h2 className='place'>100's Place</h2>
+                    <div className='placediv'>
+                        <h3 className='place'>100's Place</h3>
+                    </div>
                     <div className='initial-div' onDragOver={(e)=>this.onDragOver(e)} onDrop={(e)=> this.onDrop(e,1)}>
                         <h1>{this.state.placeList[1]}</h1>
                     </div>
                 </div>
             )
+
+            tasks.tickList.push(
+                <div key={1} className='initial-sign'></div>
+            )
+        }
     
         if(this.state.placeList[2] != null)
+        {
             tasks.placeList.push(
                 <div key={2} className='margin'>
-                    <h2 className='place'>10's Place</h2>
+                    <div className='placediv'>
+                        <h3 className='place'>10's Place</h3>
+                    </div>
                     <div className='inside-div' onDragOver={(e)=>this.onDragOver(e)} onDrop={(e)=> this.onDrop(e,2)}>
                         <img src={this.imgList[this.state.placeList[2]]} alt='number'/>
                     </div>
                 </div>
             )
+
+            if(this.state.placeList[2] === this.lst[2])
+                tasks.tickList.push(
+                    <div key={2} className='tick'>
+                        <div className='sign'>&#x2714;</div>
+                    </div>
+                )
+            else
+                tasks.tickList.push(
+                    <div key={2} className='cross'>
+                        <div className='sign'>&#x2716;</div>
+                    </div>
+                )
+        }
         else
+        {
             tasks.placeList.push(
                 <div key={2} className='margin'>
-                    <h2 className='place'>10's Place</h2>
+                    <div className='placediv'>
+                        <h3 className='place'>10's Place</h3>
+                    </div>
                     <div className='initial-div' onDragOver={(e)=>this.onDragOver(e)} onDrop={(e)=> this.onDrop(e,2)}>
                         <h1>{this.state.placeList[2]}</h1>
                     </div>
                 </div>
             )
+
+            tasks.tickList.push(
+                <div key={2} className='initial-sign'></div>
+            )
+        }
         
         if(this.state.placeList[3] != null)
+        {
             tasks.placeList.push(
                 <div key={3} className='last'>
-                    <h2 className='place'>1's Place</h2>
+                    <div className='placediv'>
+                        <h3 className='place'>1's Place</h3>
+                    </div>
                     <div className='inside-div' onDragOver={(e)=>this.onDragOver(e)} onDrop={(e)=> this.onDrop(e,3)}>
                         <img src={this.imgList[this.state.placeList[3]]} alt='number'/>
                     </div>
                 </div>
             )
+
+            if(this.state.placeList[3] === this.lst[3])
+                tasks.tickList.push(
+                    <div key={3} className='tick'>
+                        <div className='sign'>&#x2714;</div>
+                    </div>
+                )
+            else
+                tasks.tickList.push(
+                    <div key={3} className='cross'>
+                        <div className='sign'>&#x2716;</div>
+                    </div>
+                )
+        }
         else
+        {
             tasks.placeList.push(
                 <div key={3} className='last'>
-                    <h2 className='place'>1's Place</h2>
+                    <div className='placediv'>
+                        <h3 className='place'>1's Place</h3>
+                    </div>
                     <div className='initial-div' onDragOver={(e)=>this.onDragOver(e)} onDrop={(e)=> this.onDrop(e,3)}>
                         <h1>{this.state.placeList[3]}</h1>
                     </div>
                 </div>
-            )    
+            ) 
+
+            tasks.tickList.push(
+                <div key={3} className='initial-sign'></div>
+            )
+        }   
         
         if(this.state.placeList.filter((item) => item!=null).length === 4 && this.lst.every((li,i) => li===this.state.placeList[i]))
         {
@@ -193,6 +283,10 @@ export default class BoxList extends Component{
 
                     <div className='arrangement'>
                         {tasks.placeList}
+                    </div>
+
+                    <div className='tick-div'>
+                        {tasks.tickList}
                     </div>
                 </div>
             </div>

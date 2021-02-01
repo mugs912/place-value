@@ -1,12 +1,13 @@
 .trypopup
 {
   background-color: rgb(246, 210, 210);
-  height: 19em;
+  height: 23em;
   width: 18em;
   margin: auto;
   margin-top: 30px;
   border-radius: 40px;
   text-align: center;
+  box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.4);
   animation-name: trypopup;
   animation-duration: 2s;
   animation-direction: alternate;
@@ -17,6 +18,24 @@
   25% {opacity: 0.3; transform: translateY(20);}
   50% {opacity: 0.5; transform: translateY(-20px);}
   100% {opacity: 1; transform: translate(0);}
+}
+
+.not-win
+{
+    padding-top: 20px;
+    padding-bottom: 0px;
+    color: red;
+    text-align: center;
+    animation-name: not-win;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes not-win
+{
+    from {color:rgb(172, 2, 2)}
+    to {color: rgb(241, 92, 92)}
 }
 
 .trybtn

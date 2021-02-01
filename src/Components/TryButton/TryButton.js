@@ -11,6 +11,7 @@ export default function TryButton(props) {
 
     return (
         <div className='trypopup' id='try'>
+            <h2 className='not-win'>Keep Trying</h2>
             <div>
 	            <img className='trysmile' src={losegif} alt='you lose'/>
 	            <button className="trybtn" onClick={displaynone} >Try Again</button>

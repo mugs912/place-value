@@ -1,12 +1,13 @@
 .nextpopup
 {
   background-color: rgb(159, 238, 159);
-  height: 22em;
+  height: 23em;
   width: 18em;
   margin: auto;
   margin-top: 30px;
   border-radius: 40px;
   text-align: center;
+  box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.4);
   animation-name: nextpopup;
   animation-duration: 2s;
   animation-direction: alternate;
