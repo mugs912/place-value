@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import BoxList from '../BoxList/BoxList'
 import './GenerateNumber.css'
+import quegif from './que.gif'
 
 export default class GenerateNumber extends Component{
   
@@ -43,9 +44,13 @@ export default class GenerateNumber extends Component{
         var question = this.convertToWords()
         return(
           <div>
-            <h1 className='que'>
-                {question.word}
-            </h1>
+            <div className='que-div'>
+                <img className='lhsgif' src={quegif} alt='question gif'/>
+                <h1 className='que'>
+                    {question.word}
+                </h1>
+                <img className='rhsgif' src={quegif} alt='question gif'/>
+            </div>
             <BoxList list={question.list}/>
           </div>
         );
